@@ -1,0 +1,12 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts", "tsx"],
+  "testEnvironment": "jsdom",
+  "testRegex": ".*\\.e2e-spec\\.tsx$",
+  "testPathIgnorePatterns": [
+    "/node_modules/",
+    "/dist/"
+  ],
+  "transform": {
+    "^.+\\.tsx$": "ts-jest"
+  }
+}

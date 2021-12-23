@@ -1,0 +1,48 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts",
+    "tsx"
+  ],
+  "moduleNameMapper": {
+    "@rockts-org/nestjs-access-control(.*)": "<rootDir>/packages/nestjs-access-control/src/$1",
+    "@rockts-org/nestjs-email(.*)": "<rootDir>/packages/nestjs-email/src/$1",
+    "@rockts-org/nestjs-event(.*)": "<rootDir>/packages/nestjs-event/src/$1"
+  },
+  "globals": {
+    "ts-jest": {
+      "tsconfig": "tsconfig.jest.json"
+    }
+  },
+  "testRegex": ".*\\.test\\.tsx$",
+  "testPathIgnorePatterns": [
+    "/node_modules/",
+    "/dist/"
+  ],
+  "transform": {
+    "^.+\\.(ts|tsx)?$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest"
+  },
+  "collectCoverageFrom": [
+    "**/*.tsx",
+    "packages/**/*.tsx",
+    "!**/*index.tsx",
+    "!packages/**/*.d.tsx",
+    "!packages/**/*.interface.tsx",
+    "!packages/**/*.e2e-spec.tsx",
+    "!packages/nestjs-samples/src/**/main.tsx",
+    "!**/node_modules/**",
+    "!**/__stubs__/**",
+    "!**/__fixture__/**"
+  ],
+  "coverageDirectory": "coverage",
+  "coverageReporters": [
+    "html",
+    "text",
+    "text-summary",
+    "cobertura"
+  ],
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": ["<rootDir>/setupTests.ts"]
+}

@@ -22,6 +22,9 @@
     },
     {
       "path": "packages/react-ui-samples"
+    },
+    {
+      "path": "packages/react-ui-components"
     }
   ]
 }
