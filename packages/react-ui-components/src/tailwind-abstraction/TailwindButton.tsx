@@ -1,5 +1,6 @@
 import { TailwindThemeProps } from '../themeUtils';
 import { TailwindIcon } from './TailwindIcon';
+import  '../tailwind.css'
 
 export interface TailwindButtonProps {
   label?: string;

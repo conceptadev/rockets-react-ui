@@ -18,44 +18,12 @@ import Icon from "./atoms/Icon";
 import Input from "./atoms/Input";
 import Label from "./atoms/Label";
 
-import "./index.css";
+import {applyScheme} from './themeUtils';
+import { scheme, theme } from './theme';
 
-import {applyScheme} from '../src/themeUtils';
-import { scheme, theme } from '../src/theme';
+import './tailwind.css';
 
 applyScheme(scheme);
-
-const organisms = {
-    SignInForm,
-    SimpleLoginForm
-};
-
-const molecules ={
-    CheckboxLabel,
-    FormInput,
-    Notification
-};
-
-const layoutHelpers = {
-    Column,
-    Row,
-    Spacer,
-};
-
-const atoms = {
-    Anchor,
-    Button,
-    Checkbox,
-    Divider,
-    Header,
-    Icon,
-    Input,
-    Label
-};
-
-const RocktsUI = {
-    ...organisms, ...molecules, ...layoutHelpers, ...atoms
-};
 
 export {
     Anchor,
@@ -77,4 +45,3 @@ export {
     theme
 };
 
-export default RocktsUI;

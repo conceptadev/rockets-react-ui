@@ -9,7 +9,8 @@ import Spacer from '../layout-helpers/Spacer';
 import Card from '../templates/Card';
 import Column from '../layout-helpers/Column';
 import Label from '../atoms/Label';
-import image from '../assets/company-logo.png';
+// @ts-ignore
+// import image from '../assets/company-logo.png';
 import Divider from '../atoms/Divider';
 
 export interface SignInformProps {
@@ -26,7 +27,7 @@ export const SignInForm: React.FC<SignInformProps> = ({onClickSignIn}) => {
       <Spacer vertical size={10} />
 
       <Row justify="center">
-        <img src={image} alt="Company Logo" />
+        {/* <img src={image} alt="Company Logo" /> */}
       </Row>
 
       <Spacer vertical size={5} />

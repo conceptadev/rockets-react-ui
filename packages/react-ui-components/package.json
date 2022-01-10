@@ -4,6 +4,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
+  "homepage": "/",
   "files": [
     "dist"
   ],
@@ -14,14 +15,21 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^12.1.10",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "global": "^4.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
+    "craco:start": "craco start",
+    "craco:build": "craco build",
+    "clean": "rimraf dist && rimraf craco",
+    "prebuild": "yarn clean && craco build",
+    "build": "./node_modules/.bin/tsc --build --clean && ./node_modules/.bin/tsc --noEmit false",
+    "postbuild": "cp -r src/assets dist/assets && mv craco/static/css/*.css dist/tailwind.css && rimraf craco",
     "test": "craco test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",

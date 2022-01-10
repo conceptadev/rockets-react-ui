@@ -1,4 +1,4 @@
-import '../src/index.css';
+import '../src/tailwind.css';
 import {applyScheme} from '../src/themeUtils';
 const { scheme } = require('../src/theme');
 

@@ -40,6 +40,9 @@ export function withTheme<T extends TailwindThemeProps>(
 
   EnhanceComponent.displayName = componentName || WrappedComponent.name;
 
+  //@ts-ignore
+  import ('./tailwind.css');
+
   return EnhanceComponent;
 }
 
