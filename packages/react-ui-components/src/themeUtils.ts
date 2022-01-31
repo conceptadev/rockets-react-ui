@@ -8,11 +8,11 @@ export function withTheme<T extends TailwindThemeProps>(
     const themePropsToTailwindProps = {} as T;
 
     if (primary) {
-      themePropsToTailwindProps.type = 'primary';
+      themePropsToTailwindProps.themeType = 'primary';
     } else if (secondary) {
-      themePropsToTailwindProps.type = 'secondary';
+      themePropsToTailwindProps.themeType = 'secondary';
     } else if (outlined) {
-      themePropsToTailwindProps.type = 'outlined';
+      themePropsToTailwindProps.themeType = 'outlined';
     }
 
     if (rounded) {
@@ -54,7 +54,7 @@ export const applyScheme = (scheme: ThemeScheme) => {
 };
 
 export interface ThemeTypeProps {
-  type?: 'default' | 'primary' | 'secondary' | 'outlined';
+  themeType?: 'default' | 'primary' | 'secondary' | 'outlined';
   rounded?: 'rounded';
   fullWidth?: 'w-full'
 }

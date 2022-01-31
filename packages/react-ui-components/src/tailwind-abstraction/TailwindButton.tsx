@@ -1,6 +1,6 @@
 import { TailwindThemeProps } from '../themeUtils';
 import { TailwindIcon } from './TailwindIcon';
-import  '../tailwind.css'
+import '../tailwind.css';
 
 export interface TailwindButtonProps {
   label?: string;
@@ -16,9 +16,11 @@ export const TailwindButton = (
     <button
       type="button"
       onClick={props.onClick}
-      className={`${styles.base} ${props.fullWidth} ${props.label ? styles.baseLabel : ''} ${
-        styles[props.type || 'default']
-      } ${props.rounded ? styles[props.rounded] : ''} 
+      className={`${styles.base} ${props.fullWidth} ${
+        props.label ? styles.baseLabel : ''
+      } ${styles[props.themeType || 'default']} ${
+        props.rounded ? styles[props.rounded] : ''
+      } 
       ${props.label && props.size ? styles[props.size] : ''}`}
     >
       {props.leftIcon && (
@@ -36,34 +38,7 @@ export const TailwindButton = (
   );
 };
 
-const styles = {
-  base: `
-    inline-flex 
-    items-center 
-    justify-center 
-    rounded 
-    p-1.5 
-    font-medium`,
-  baseLabel: `
-  `,
-  xs: ` text-xs px-2.5 py-1.5 `,
-  sm: ` text-sm px-3 py-2 leading-4 `,
-  md: ` text-sm px-4 py-2 `,
-  lg: ` text-base px-4 py-2 `,
-  xl: ` text-base px-6 py-3 `,
-  default: `border 
-    border-transparent 
-    shadow-sm 
-    text-white 
-    bg-primary-600 
-    dark:bg-primary-dark-600 
-    hover:bg-primary-700 
-    dark:hover:bg-primary-dark-700 
-    focus:outline-none 
-    focus:ring-2 
-    focus:ring-offset-2 
-    focus:ring-primary-600`,
-  primary: `
+const defaultStyles = `
     border 
     border-transparent 
     shadow-sm 
@@ -72,10 +47,29 @@ const styles = {
     dark:bg-primary-dark-600 
     hover:bg-primary-700 
     dark:hover:bg-primary-dark-700 
+    focus:ring-primary-600
+    `;
+
+const styles = {
+  base: `
+    inline-flex 
+    items-center 
+    justify-center 
+    rounded-md
+    p-1.5 
+    font-medium
+    focus:ring-2
     focus:outline-none 
-    focus:ring-2 
-    focus:ring-offset-2 
-    focus:ring-primary-600`,
+    focus:ring-offset-2`,
+  baseLabel: `
+  `,
+  xs: ` text-xs px-2.5 py-1.5 `,
+  sm: ` text-sm px-3 py-2 leading-4 `,
+  md: ` text-sm px-4 py-2 `,
+  lg: ` text-base px-4 py-2 `,
+  xl: ` text-base px-6 py-3 `,
+  default: defaultStyles,
+  primary: defaultStyles,
   secondary: `
     border 
     border-transparent 
@@ -85,9 +79,6 @@ const styles = {
     dark:bg-secondary-dark-100 
     hover:bg-secondary-200 
     dark:hover:bg-secondary-dark-200 
-    focus:outline-none 
-    focus:ring-2 
-    focus:ring-offset-2 
     focus:ring-secondary-700`,
   outlined: `
     text-outlined-700 
@@ -98,8 +89,6 @@ const styles = {
     dark:hover:bg-outlined-dark-50
     border-2 
     border-outlined-300
-    focus:outline-none 
-    focus:ring-2 
     focus:ring-offset-2 
     focus:ring-primary-600`,
   rounded: `

@@ -42,7 +42,14 @@ const theme = {
             300: 'var(--theme-outlined-dark-300)',
             700: 'var(--theme-outlined-dark-700)'
         },
+        gray: {
+            400: 'var(--theme-gray-400)'
+        }
     },
+
+    backgroundColor:{
+        signin: 'var(--theme-signing-bg)'
+    }
 }
 
 const scheme = {
@@ -56,10 +63,7 @@ const scheme = {
     "--theme-primary-dark-600": "green",
     "--theme-primary-dark-700": "green",
 
-    // "--theme-primary-600": "#DC2626",
-    // "--theme-primary-700": "#B91C1C",
-    // "--theme-primary-dark-600": "red",
-    // "--theme-primary-dark-700": "red",
+    "--theme-gray-400": "#9CA3AF",
 
     "--theme-secondary-100": "#DBEAFE",
     "--theme-secondary-200": "#BFDBFE",
@@ -76,6 +80,8 @@ const scheme = {
     "--theme-outlined-dark-50": "#F9FAFB",
     "--theme-outlined-dark-700": "#374151",
     "--theme-outlined-dark-300": "#D1D5DB",
+
+    "--theme-signing-bg": "#F9FAFB"
 }
 
 // const images = {

@@ -7,9 +7,10 @@ import {
 import { ThemeProps, withTheme } from '../themeUtils';
 import Column from '../layout-helpers/Column';
 
-export type InputProps = TailwindInputProps & ThemeProps & {
-  showClear?: boolean;
-};
+export type InputProps = TailwindInputProps &
+  ThemeProps & {
+    showClear?: boolean;
+  };
 const ThemedInput = withTheme(TailwindInput, 'Input');
 
 const Input: React.FC<InputProps> = (props) => {

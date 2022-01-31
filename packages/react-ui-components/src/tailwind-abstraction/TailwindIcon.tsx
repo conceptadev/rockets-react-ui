@@ -1,4 +1,3 @@
-import React from 'react';
 import { TailwindThemeProps } from '../themeUtils';
 import * as OutlineIcons from '@heroicons/react/outline';
 import * as SolidIcons from '@heroicons/react/solid';
@@ -6,23 +5,32 @@ import * as SolidIcons from '@heroicons/react/solid';
 export interface TailwindIconProps {
   icon: string;
   outline?: boolean;
-  styles?: string
+  styles?: string;
+  onClick?(): void;
 }
 
 export const TailwindIcon = (props: TailwindIconProps & TailwindThemeProps) => {
-  const [DynamicComponent, setDynamicComponent] = React.useState<JSX.Element>();
-
   const Icons = props.outline ? OutlineIcons : SolidIcons;
 
   // @ts-ignore
   const Icon = Icons[props.icon];
 
-  return <Icon className={`${styles.base} ${props.size ? styles[props.size] : ''} ${props.styles}`} />;
+  return (
+    <div
+      style={{ cursor: props.onClick ? 'pointer' : 'auto' }}
+      onClick={props.onClick}
+    >
+      <Icon
+        className={`${styles.base} ${props.size ? styles[props.size] : ''} ${
+          props.styles
+        }`}
+      />
+    </div>
+  );
 };
 
 const styles = {
-  base: `
-    `,
+  base: `  `,
   xs: ` h-3 w-3 `,
   sm: ` h-4 w-4 `,
   md: ` h-5 w-5 `,
