@@ -24,7 +24,7 @@ interface FallbackComponentProps {
 }
 
 export const HOCWrapper = (
-  value: React.ReactNode,
+  value: React.ReactNode | string,
   wrapper: React.ReactNode,
 ): React.ReactNode => {
   if (typeof value == 'string') {

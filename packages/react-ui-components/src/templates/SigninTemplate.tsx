@@ -1,15 +1,15 @@
 import React from 'react';
 import Header from '../atoms/Header';
-import { CenteredRow } from '../layout-helpers/Row';
 import Spacer from '../layout-helpers/Spacer';
 import Column from '../layout-helpers/Column';
-import { FallbackComponent, HOCWrapper } from '../utils/componentUtils';
 import Caption from '../atoms/Caption';
+import { CenteredRow } from '../layout-helpers/Row';
+import { FallbackComponent, HOCWrapper } from '../utils/componentUtils';
 
 export interface SigninTemplateProps {
-  logo?: React.ReactNode;
-  title?: React.ReactNode;
-  caption?: React.ReactNode;
+  logo?: React.ReactNode | string;
+  title?: React.ReactNode | string;
+  caption?: React.ReactNode | string;
 }
 
 export const SigninTemplate: React.FC<SigninTemplateProps> = ({
