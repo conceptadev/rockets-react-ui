@@ -3,7 +3,19 @@ export function withTheme<T extends TailwindThemeProps>(
   componentName?: string,
 ) {
   const EnhanceComponent: React.FC<ThemeProps> = (props) => {
-    const { primary, secondary, outlined, rounded, xs, sm, md, lg, xl, fullWidth, ...rest } = props;
+    const {
+      primary,
+      secondary,
+      outlined,
+      rounded,
+      xs,
+      sm,
+      md,
+      lg,
+      xl,
+      fullWidth,
+      ...rest
+    } = props;
 
     const themePropsToTailwindProps = {} as T;
 
@@ -25,13 +37,13 @@ export function withTheme<T extends TailwindThemeProps>(
       themePropsToTailwindProps.size = 'sm';
     } else if (lg) {
       themePropsToTailwindProps.size = 'lg';
-    }else if (xl) {
+    } else if (xl) {
       themePropsToTailwindProps.size = 'xl';
-    }else {
+    } else {
       themePropsToTailwindProps.size = 'md';
     }
 
-    if(fullWidth){
+    if (fullWidth) {
       themePropsToTailwindProps.fullWidth = 'w-full';
     }
 
@@ -41,7 +53,7 @@ export function withTheme<T extends TailwindThemeProps>(
   EnhanceComponent.displayName = componentName || WrappedComponent.name;
 
   //@ts-ignore
-  import ('./tailwind.css');
+  import('./tailwind.css');
 
   return EnhanceComponent;
 }
@@ -56,7 +68,7 @@ export const applyScheme = (scheme: ThemeScheme) => {
 export interface ThemeTypeProps {
   themeType?: 'default' | 'primary' | 'secondary' | 'outlined';
   rounded?: 'rounded';
-  fullWidth?: 'w-full'
+  fullWidth?: 'w-full';
 }
 
 export interface ThemeSizeProps {
