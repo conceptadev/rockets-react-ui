@@ -33,7 +33,7 @@
     "craco:start": "craco start",
     "craco:build": "craco build",
     "clean": "rimraf dist && rimraf craco",
-    "prebuild": "yarn clean && craco build",
+    "prebuild": "yarn clean && BUILD_PATH=./craco craco build",
     "build": "./node_modules/.bin/tsc --build --clean && ./node_modules/.bin/tsc --noEmit false",
     "postbuild": "cp -r src/assets dist/assets && mv craco/static/css/*.css dist/tailwind.css && rimraf craco",
     "test": "craco test",
