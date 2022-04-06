@@ -88,6 +88,7 @@ export interface ThemeProps {
   lg?: boolean;
   xl?: boolean;
   fullWidth?: boolean;
+  errored?: boolean;
 }
 
 export interface ThemeScheme {

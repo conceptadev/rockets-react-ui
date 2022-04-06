@@ -1,4 +1,4 @@
-import {Meta, Story} from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 import Input, { InputProps } from './Input';
 
 export default {
@@ -10,10 +10,10 @@ const Template: Story<InputProps> = (args) => <Input {...args} />;
 
 export const Base = Template.bind({});
 
-export const WithClearInput = Template.bind({});
-WithClearInput.args = {
-  showClear: true
-}
+// export const WithClearInput = Template.bind({});
+// WithClearInput.args = {
+//   showClear: true,
+// };
 
 export const XSInput = Template.bind({});
 XSInput.args = {
@@ -22,20 +22,26 @@ XSInput.args = {
 
 export const SMInput = Template.bind({});
 SMInput.args = {
-  sm: true
+  sm: true,
 };
 
 export const MDInput = Template.bind({});
 MDInput.args = {
-  md: true
+  md: true,
 };
 
 export const LGInput = Template.bind({});
 LGInput.args = {
-  lg: true
+  lg: true,
 };
 
 export const XLInput = Template.bind({});
 XLInput.args = {
-  xl: true
+  xl: true,
+};
+
+export const ErrorInput = Template.bind({});
+ErrorInput.args = {
+  error: 'Some error',
+  errored: true,
 };

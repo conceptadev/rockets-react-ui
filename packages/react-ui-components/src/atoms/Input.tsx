@@ -9,19 +9,20 @@ import Column from '../layout-helpers/Column';
 
 export type InputProps = TailwindInputProps &
   ThemeProps & {
-    showClear?: boolean;
+    error?: string;
   };
 const ThemedInput = withTheme(TailwindInput, 'Input');
 
-const Input: React.FC<InputProps> = (props) => {
+const Input: React.FC<InputProps> = ({ error = '', ...props }) => {
   return (
-    <Row align="center">
-      <ThemedInput {...props} />
-      {props.showClear && (
+    <Row column>
+      <ThemedInput {...props} errored={error.length > 0} />
+      {/* {showClear && (
         <Column absolute right>
           <Icon icon="XIcon" />
         </Column>
-      )}
+      )} */}
+      {error && <span className="text-xs text-red-700">{error}</span>}
     </Row>
   );
 };

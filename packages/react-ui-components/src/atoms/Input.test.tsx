@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Input.stories';
 
-const { Base, WithClearInput, XSInput, SMInput, MDInput, LGInput, XLInput } =
+const { Base, XSInput, SMInput, MDInput, LGInput, XLInput } =
   composeStories(stories);
 
 describe('Input', () => {
@@ -15,11 +15,6 @@ describe('Input', () => {
   test('should not show clear button input', () => {
     const { container } = render(<Base />);
     expect(container.querySelector('svg')).not.toBeInTheDocument();
-  });
-
-  test('should show clear button input', () => {
-    const { container } = render(<WithClearInput />);
-    expect(container.querySelector('svg')).toBeInTheDocument();
   });
 
   test('should render xs input', () => {

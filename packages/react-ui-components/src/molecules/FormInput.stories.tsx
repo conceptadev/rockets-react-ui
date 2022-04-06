@@ -1,4 +1,4 @@
-import {Meta, Story} from "@storybook/react";
+import { Meta, Story } from '@storybook/react';
 import { FormInput, FormInputProps } from './FormInput';
 
 export default {
@@ -11,7 +11,6 @@ const Template: Story<FormInputProps> = (args) => <FormInput {...args} />;
 export const Base = Template.bind({});
 Base.args = {
   label: 'Base Form Input',
-  showClear: true
 };
 
 export const XSFormInput = Template.bind({});
@@ -42,4 +41,10 @@ export const XLFormInput = Template.bind({});
 XLFormInput.args = {
   label: 'XL Form Input',
   xl: true,
+};
+
+export const FormInputError = Template.bind({});
+FormInputError.args = {
+  label: 'Error Form Imput',
+  error: 'olar',
 };
