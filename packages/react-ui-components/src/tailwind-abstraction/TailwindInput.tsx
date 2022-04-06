@@ -5,16 +5,17 @@ export interface TailwindInputProps {
   value?: string;
   type?: string;
   onChange?(value: string): void;
-  errored: boolean;
+  errored?: boolean;
 }
 
-export const TailwindInput = (
-  props: TailwindInputProps & TailwindThemeProps,
-) => {
+export const TailwindInput = ({
+  errored = false,
+  ...props
+}: TailwindInputProps & TailwindThemeProps) => {
   return (
     <input
       className={`${styles.base} ${props.fullWidth} ${
-        props.errored && styles.error
+        errored && styles.error
       } ${props.size ? styles[props.size] : ''}`}
       value={props.value}
       type={props.type}
