@@ -5,12 +5,22 @@ export interface TailwindInputProps {
   value?: string;
   type?: string;
   onChange?(value: string): void;
+  errored: boolean;
 }
 
 export const TailwindInput = (
   props: TailwindInputProps & TailwindThemeProps,
 ) => {
-  return <input className={`${styles.base} ${props.fullWidth} ${props.size ? styles[props.size] : ''}`} value={props.value} type={props.type} onChange={(e)=>props.onChange?.(e.target.value)} />;
+  return (
+    <input
+      className={`${styles.base} ${props.fullWidth} ${
+        props.errored && styles.error
+      } ${props.size ? styles[props.size] : ''}`}
+      value={props.value}
+      type={props.type}
+      onChange={(e) => props.onChange?.(e.target.value)}
+    />
+  );
 };
 
 const styles = {
@@ -28,6 +38,7 @@ const styles = {
     focus:border-indigo-500
   `,
   xs: ` text-xs py-1`,
+  error: ` border-red-700`,
   sm: ` text-sm py-1.5  leading-4 `,
   md: ` text-sm py-1.5 `,
   lg: ` text-base py-2 `,
