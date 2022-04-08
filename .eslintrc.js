@@ -5,11 +5,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ['./packages/*/tsconfig.json'],
   },
-  plugins: [
-    'import',
-    'jsdoc',
-    '@typescript-eslint/eslint-plugin'
-  ],
+  plugins: ['import', 'jsdoc', '@typescript-eslint/eslint-plugin'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -21,7 +17,11 @@ module.exports = {
     node: true,
     jest: true,
   },
-  ignorePatterns: ['.eslintrc.js', 'packages/*/dist'],
+  ignorePatterns: [
+    '.eslintrc.js',
+    'packages/*/dist',
+    '**/commitlint.config.js',
+  ],
   rules: {
     'no-unused-vars': 'off',
     'import/no-extraneous-dependencies': 'error',
