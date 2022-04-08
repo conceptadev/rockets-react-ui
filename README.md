@@ -2,7 +2,7 @@
   <img width="150" src="https://raw.githubusercontent.com/conceptadev/rockets/main/assets/rockets-icon.svg">
 </p>
 
-# Rockets
+# Rockets React Ui
 
 [![GitHub Build](https://img.shields.io/github/workflow/status/conceptadev/rockets-react-ui/ci-pr-test?logo=github)](https://github.com/conceptadev/rockets-react-ui/actions/workflows/ci-pr-test.yml)
 [![GH Commits](https://img.shields.io/github/commit-activity/m/conceptadev/rockets-react-ui?logo=github)](https://github.com/conceptadev/rockets-react-ui)
