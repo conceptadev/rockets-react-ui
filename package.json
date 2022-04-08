@@ -1,5 +1,6 @@
 {
   "name": "root",
+  "version": "1.0.0-alpha.0",
   "private": true,
   "license": "BSD-3-Clause",
   "workspaces": {
@@ -11,12 +12,12 @@
     "babel-loader": "8.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
     "@types/jest": "^26.0.24",
     "@types/node": "^16.0.0",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
-    "@commitlint/cli": "^16.1.0",
-    "@commitlint/config-conventional": "^16.0.0",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
