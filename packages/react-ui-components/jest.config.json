@@ -5,11 +5,6 @@
     "ts",
     "tsx"
   ],
-  "moduleNameMapper": {
-    "@rockts-org/nestjs-access-control(.*)": "<rootDir>/packages/nestjs-access-control/src/$1",
-    "@rockts-org/nestjs-email(.*)": "<rootDir>/packages/nestjs-email/src/$1",
-    "@rockts-org/nestjs-event(.*)": "<rootDir>/packages/nestjs-event/src/$1"
-  },
   "globals": {
     "ts-jest": {
       "tsconfig": "tsconfig.jest.json"

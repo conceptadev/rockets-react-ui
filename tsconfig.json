@@ -21,9 +21,6 @@
       "path": "packages/react-ui-common"
     },
     {
-      "path": "packages/react-ui-samples"
-    },
-    {
       "path": "packages/react-ui-components"
     }
   ]
